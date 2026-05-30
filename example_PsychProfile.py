@@ -1,4 +1,4 @@
-from main_PsychRAG import retrieve_similar_case, AdaptiveTreatmentSystem, extract_experience
+from main_PsychProfile import retrieve_similar_case, AdaptiveTreatmentSystem, extract_experience
 import os
 from _utils import convert_response_to_json
 import time
@@ -30,7 +30,7 @@ for case in standard_answers:
     diagnose_dict[ipid] = [std_ans, case['primary_diagnosis']]
 result_dict = {}
 case_file_path = "data/datacase.json"
-knowledge_dir = "./psychrag_kg"
+knowledge_dir = "./psychprofile_kg"
 for item in loaded_data:
     ipid = item['conversations'][0]['value']
     result = {}
@@ -48,6 +48,6 @@ for item in loaded_data:
     result['test_result'], result['test_dialog'] = rag_system.process_case(result['record'])
     result_dict[ipid] = result
     cnt = cnt +1
-with open(f'PsychRAG_{dataname}_{backbone}_{date}.json', "w", encoding="utf-8") as json_file:
+with open(f'PsychProfile_{dataname}_{backbone}_{date}.json', "w", encoding="utf-8") as json_file:
     json.dump(result_dict, json_file, ensure_ascii=False, indent=4)
 
