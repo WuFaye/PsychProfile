@@ -1,8 +1,8 @@
-# PsychRAG
+# PsychProfile
 
-Official implementation of **PsychRAG: A dual-process retrieval-augmented framework for clinically grounded psychiatric decision support**.
+Official implementation of **PsychProfile: A dual-process retrieval-augmented framework for clinically grounded psychiatric decision support**.
 
-PsychRAG is a retrieval-augmented reasoning framework designed to support psychiatric clinical decision-making by integrating:
+PsychProfile is a retrieval-augmented reasoning framework designed to support psychiatric clinical decision-making by integrating:
 
 * **Evidence-based knowledge** (clinical guidelines, literature, drug instructions)
 * **Historical clinical practice** patterns derived from structured psychiatric case representations
@@ -16,7 +16,7 @@ The framework supports representative psychiatric decision-support tasks includi
 
 ## Repository Structure
 ```
-PsychRAG/
+PsychProfile/
 ├── src/
 │   ├── HyperGraph.py             # Clinical practice pattern graph construction
 │   ├── graphrag.py               # nano-graph rag inteface
@@ -24,11 +24,11 @@ PsychRAG/
 │   ├── prompt.py                 # Prompt templates
 │   ├── _llm.py                   # LLM interface
 │   ├── _utils.py                 # tools of normalizing model output
-│   ├── main_PsychRAG.py          # Main pipeline entry
+│   ├── main_PsychProfile.py          # Main pipeline entry
 │   ├── main_SimilarCase.py       # Similar case retrieval pipeline
 │   └── druginfo/                 # Drug-related reference resources
 │
-├── example_PsychRAG.py           # Minimal usage example for PsychRAG
+├── example_PsychProfile.py           # Minimal usage example for PsychRAG
 ├── example_SimilarCase.py        # Minimal usage example for similar case retrieval
 └── README.md
 ```
@@ -38,11 +38,11 @@ PsychRAG/
 Clone this repository:
 
 ```bash
-git clone https://github.com/WuFaye/PsychRAG.git
-cd PsychRAG
+git clone https://github.com/WuFaye/PsychProfile.git
+cd PsychProfile
 ```
 
-PsychRAG depends on the NanoGraphRAG framework. Please clone the NanoGraphRAG repository into the `src/` directory:
+PsychProfile depends on the NanoGraphRAG framework. Please clone the NanoGraphRAG repository into the `src/` directory:
 ```bash
 cd src
 git clone https://github.com/gusye1234/nano-graphrag.git
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 ```
 ### Model Configuration
 
-PsychRAG supports multiple LLM backends.
+PsychProfile supports multiple LLM backends.
 
 The current implementation includes ready-to-use interfaces for:
 
@@ -98,18 +98,18 @@ $env:DOUBAO_API_KEY="your_doubao_api_key"
 
 #### Local Model Inference (Optional)
 
-PsychRAG also supports local inference using Hugging Face models.  
+PsychProfile also supports local inference using Hugging Face models.  
 For local deployment, no API key is required, but users should ensure:
 
 - model weights are available locally
 - CUDA-compatible GPU resources are properly configured
 - device settings in `src/_llm.py` match the local hardware environment
 
-### Run PsychRAG
-Run PsychRAG
+### Run PsychProfile
+Run PsychProfile
 
 ```
-python example_PsychRAG.py
+python example_PsychProfile.py
 ```
 
 
